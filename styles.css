@@ -243,6 +243,12 @@ select {
 
 .price-button {
   margin-top: auto;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.36em;
+  overflow: hidden;
   color: var(--primary-foreground);
   background: var(--primary);
   box-shadow: var(--shadow);
@@ -251,11 +257,66 @@ select {
   transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
 }
 
+.price-button::before {
+  position: absolute;
+  left: 18%;
+  bottom: 14px;
+  width: 64%;
+  height: 0.08em;
+  background: currentColor;
+  content: "";
+  pointer-events: none;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.price-button span,
+.price-button-arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.price-button-arrow {
+  width: 0.72em;
+  height: 0.72em;
+  flex: 0 0 auto;
+}
+
+.price-button-arrow path {
+  stroke: currentColor;
+  stroke-width: 1.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 32;
+  stroke-dashoffset: 32;
+  transition: stroke-dashoffset 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .price-button:hover,
 .price-button:focus-visible {
   background: var(--secondary);
   transform: translate(2px, 2px);
   box-shadow: 2px 2px 0 0 hsl(0 0% 10.1961% / 1);
+}
+
+.price-button:hover::before,
+.price-button:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.price-button:hover .price-button-arrow path,
+.price-button:focus-visible .price-button-arrow path {
+  stroke-dashoffset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .price-button,
+  .price-button::before,
+  .price-button-arrow path {
+    transition: none;
+  }
 }
 
 .session-control {
