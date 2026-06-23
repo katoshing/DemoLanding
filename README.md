@@ -22,25 +22,44 @@ python3 -m http.server 8000
 
 ## Публикация на GitHub Pages
 
-1. Сделайте первый коммит:
+Сайт уже подготовлен для публикации из ветки `gh-pages`.
+
+1. Откройте репозиторий на GitHub.
+2. Перейдите в `Settings` -> `Pages`.
+3. В разделе `Build and deployment` выберите:
+   - Source: `Deploy from a branch`
+   - Branch: `gh-pages`
+   - Folder: `/root`
+4. Нажмите `Save`.
+
+После публикации сайт будет доступен по адресу:
+
+```text
+https://katoshing.github.io/DemoLanding/
+```
+
+## Обновление сайта
+
+После изменений в `main` сделайте коммит:
 
 ```bash
 git add .
-git commit -m "Add static GitHub Pages site"
+git commit -m "Update site"
 ```
 
-2. Отправьте код в репозиторий:
+Отправьте изменения в `main`:
 
 ```bash
-git push -u origin main
+git push
 ```
 
-3. Откройте репозиторий на GitHub.
-4. Перейдите в `Settings` -> `Pages`.
-5. В разделе `Build and deployment` выберите:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-6. Нажмите `Save`.
+Затем обновите ветку публикации:
 
-После публикации GitHub покажет ссылку на сайт в этом же разделе.
+```bash
+git switch gh-pages
+git checkout main -- index.html styles.css script.js README.md
+git add .
+git commit -m "Update published site"
+git push
+git switch main
+```
