@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Като</title>
+    <meta
+      name="description"
+      content="Профессиональная консультация, таро-расклад и ведение от Като."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="Главная навигация">
+        <a class="brand" href="#top" aria-label="Като">Като</a>
+        <a href="#services">Услуги</a>
+        <a href="#about">О проекте</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <section class="hero-content" id="top">
+        <p class="eyebrow">Личная практика</p>
+        <h1>Привет! Ты на странице Като</h1>
+      </section>
+    </header>
+
+    <main>
+      <section class="services-section" id="services" aria-labelledby="services-title">
+        <div class="section-heading">
+          <p class="eyebrow">Форматы</p>
+          <h2 id="services-title">Выберите подходящий способ работы</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card" data-service="consultation">
+            <h3>Профессиональная консультация</h3>
+            <div class="service-image consultation" role="img" aria-label="Место для изображения профессиональной консультации"></div>
+            <button class="price-button" type="button" data-price="5555">
+              Стоимость
+            </button>
+            <p class="price-result" aria-live="polite"></p>
+          </article>
+
+          <article class="service-card" data-service="tarot">
+            <h3>Таро-расклад</h3>
+            <div class="service-image tarot" role="img" aria-label="Место для изображения таро-расклада"></div>
+            <button class="price-button" type="button" data-price="4444">
+              Стоимость
+            </button>
+            <p class="price-result" aria-live="polite"></p>
+          </article>
+
+          <article class="service-card" data-service="support">
+            <h3>Ведение</h3>
+            <div class="service-image support" role="img" aria-label="Место для изображения ведения"></div>
+            <div class="session-control">
+              <label for="session-count">Выбрать количество</label>
+              <select id="session-count" name="session-count">
+                <option value="">Выберите вариант</option>
+                <option value="10000">3 сессии</option>
+                <option value="23000">5 сессий</option>
+                <option value="34000">7 сессий</option>
+              </select>
+            </div>
+            <p class="price-result" aria-live="polite"></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about-section" id="about" aria-labelledby="about-title">
+        <div class="about-copy">
+          <p class="eyebrow">О проекте</p>
+          <h2 id="about-title">Я могу помочь вам разными способами</h2>
+          <ul class="benefits-list">
+            <li>Большой профессиональный опыт</li>
+            <li>Чуткость</li>
+            <li>Управление диалогом</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <p class="eyebrow">Вопросы</p>
+          <h2 id="faq-title">Часто задаваемые вопросы</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Как выбрать формат?</summary>
+            <p>Если нужен точечный разбор, подойдет консультация. Если хочется символического взгляда на ситуацию, выберите таро-расклад. Для регулярной поддержки подойдет ведение.</p>
+          </details>
+          <details>
+            <summary>Можно ли начать с одной встречи?</summary>
+            <p>Да, профессиональная консультация хорошо подходит для первого контакта и понимания задачи.</p>
+          </details>
+          <details>
+            <summary>Что входит в ведение?</summary>
+            <p>Ведение включает серию встреч, где мы последовательно разбираем запрос, отслеживаем динамику и выбираем следующие шаги.</p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 Като</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
